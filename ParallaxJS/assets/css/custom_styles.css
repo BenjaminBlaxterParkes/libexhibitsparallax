@@ -41,6 +41,8 @@
 }
 .nav-container {
     float: right;
+    max-width: 200px;
+    min-width: 100px;
 }
 .nav-container ul {
     display: -webkit-inline-box;
@@ -95,9 +97,7 @@
 
 /* Welcome Block */
 #welcome-container {
-    margin-top: 5.6vh;
-    margin-left: 20vh;
-    margin-right: 8vh;
+    margin-bottom: 0;
 }
 #opening-times {
     font-size: 25px;
@@ -155,9 +155,9 @@
     margin-top: 50px;
 }
 #google-map {
-    height: 250px;
-    width: 400px;
-    margin-right: 5vh;
+    height: 300px;
+    width: 700px;
+    margin-right: 8vh;
 }
 #email-link {
     margin: 0;
