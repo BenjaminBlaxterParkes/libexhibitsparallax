@@ -1,0 +1,859 @@
+<!--
+ The University of Edinburgh Library Exhibitions entry site
+ Author @bparkes, Digital Library Development & Systems, 2019
+ © University of Ediburgh, Library & University Collections, 2019
+-->
+
+
+<!-- STRUCTURAL ABSTRACTIONS -->
+
+<!-- Image naming convention: each wrapper & block has abstract image name(s) that can be replaced for easy updating 
+    * Just replace file in assets/images/... with a file of the same name and the change should be seen directly on refresh of site 
+-->
+
+<!-- Text alignment convention: text alignment maintained with diffeent classes (assests/css/customstyles.css)
+    * use either left-align-"x" or right-align-"x" to align headers and paragraphs inside blocks 
+-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>UofE Library Exhbitions</title>
+
+    <!-- FONT IMPORTS -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS STYLES -->
+    <link href="assets/css/parallax_styles.css" rel="stylesheet">
+    <link href="assets/css/custom_styles.css" rel="stylesheet">
+    <!--<link href="/header.css" rel="stylesheet">-->
+
+</head>
+<body>
+
+    <!-- PARALLAX WRAPPERS FOR BACKGROUND IMAGES -->
+    <!-- Associated with the block before the gap appears -->
+
+    <!-- Wrapper for head image -->
+    <div
+        id="head-wrapper"
+        class="parallax-image-wrapper"
+        data-anchor-target="#page-gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)"
+        >
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/background/library_entrance.jpg)"
+            data-anchor-target="#page-gap"
+            data-bottom-top="transform: translateY(-100%);"
+            data-top-bottom="transform: translateY(50%);"
+            >
+        </div>
+    </div>
+
+    <!-- Wrapper for visit us image -->
+    <div
+        id="visit-block-wrapper"
+        class="parallax-image-wrapper"
+        data-anchor-target="#block-one + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)"
+        >
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/background/visit_us.png)"
+            data-anchor-target="#block-one + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>
+    </div>
+
+    <!-- Wrapper for exhibitions image -->
+    <div
+        id="exhibitions-block-wrapper"
+        class="parallax-image-wrapper"
+        data-anchor-target="#block-two + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)"
+        >
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/background/current_exhibition.jpg)"
+            data-anchor-target="#block-two + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>
+    </div>
+
+    <!--  Wrapper for events image -->
+    <div
+        id="events-block-wrapper"
+        class="parallax-image-wrapper"
+        data-anchor-target="#block-three + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)"
+        >
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/background/events.jpg)"
+            data-anchor-target="#block-three + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>
+    </div>
+
+    <div
+        id="support-block-wrapper"
+        class="parallax-image-wrapper"
+        data-anchor-target="#block-four + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)"
+        >
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/background/support.jpg)"
+            data-anchor-target="#block-four + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>
+    </div>
+
+    <!-- TEMPLATES FOR DIFFERENT WRAPPER STYLES -->
+    <!--<div
+        class="parallax-image-wrapper"
+        data-anchor-target=".features-list + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)">
+        <div
+            class="parallax-image-3"
+            style="background-image:url(assets/images/bay.jpg)"
+            data-anchor-target=".features-list + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>
+    </div>-->
+    <!--<div
+        class="parallax-image-wrapper"
+        data-anchor-target=".about-us + .gap"
+        data-bottom-top="transform:translateY(200%)"
+        data-top-bottom="transform:translateY(0)">
+        <div
+            class="parallax-image"
+            style="background-image:url(assets/images/coming_soon.png)"
+            data-anchor-target=".about-us + .gap"
+            data-bottom-top="transform: translateY(-80%);"
+            data-top-bottom="transform: translateY(80%);"
+            >
+        </div>-->
+
+    </div>
+
+
+
+
+    <!-- PARALLAX SCROLL BODY -->
+    <!-- Contains the content of the different information blocks -->
+    <div id="skrollr-body">
+
+        <!-- GAP DIVS ENFORCE "BACKGROUND" SPACE FOR IMAGES -->
+        <div id="page-gap" class="gap">
+ 
+            <!-- MAIN UNIVERSITY LOGO -->
+            <div class="logo-container">
+                <a href="https://www.ed.ac.uk/">
+                    <img src="assets/images/logos/uofe_logo.png" alt="University of Edinburgh Logo">
+                </a>
+            </div>
+
+            <!-- STATIC NAVIGATION BAR TEMPLATE -->
+            <div class="nav-container">
+                <ul>
+                    <div class="smol"><a class="nav-link" href="#visit-anchor"><li>Visit Us</li></a></div>
+                    <div><a class="nav-link" href="#exhibitions-anchor"><li>Exhibitions</li></a></div>
+                    <div class="smol"><a class="nav-link" href="#events-anchor"><li>Events</li></a></div>
+                    <div><a class="nav-link" href="#support-anchor"><li>Support Us</li></a></div>
+                </ul>
+            </div>
+
+            <!-- HEADER FOR NEXT BLOCK MAINTAINED INSIDE PREVIOUS PAGE GAP -->
+            <!-- Header ids also used for 'jumps' to blocks throughout site -->
+            <div class="block-title">
+                <h1 id="home" class="block-title-head">Libaray Exhibitions</h1>
+            </div>
+
+        </div>
+    
+        <!-- PARALLAX (SCROLLING) BLOCKS -->
+        <!-- Contain the content for each block/section of the page 
+            * to be update for new exhibitions or information changes -->
+
+        <!-- HEAD BLOCK -->
+        <div id="block-one" class="body-text content">
+
+            <div id="discover-logo">
+                <img src="assets/images/logos/discover_ed_logo.png">
+            </div>
+            <div id="welcome-container">
+                <h2 class="right-align-h" >Welcome to the University of Edinburgh Library Exhibitions</h2>
+
+                <p class="right-align-p">
+                    The University of Edinburgh is home to around 200,000 artefacts, works of art, potted material, models, specimens, musical instruments and scientific apparatus.
+                </p>
+
+                
+                <p id="opening-times" class="right-align-p">
+                </p>
+        
+            </div>
+
+        </div>
+
+        <div id="page-gap" class="gap">
+
+            <div id="visit-anchor"></div>
+
+            <!-- ANIMATED NAVIGATION BAR TEMPLATE * only used for blocks that are scrolled over -->
+            <div class="nav-container" data-100-bottom-top="transform: translateY(-500px); opacity: -10" data-center-top="transform: translateX(0px); opacity: 1">
+                <ul>
+                    <div class="smol"><a class="nav-link" href="#visit-anchor"><li>Visit Us</li></a></div>
+                    <div><a class="nav-link" href="#exhibitions-anchor"><li>Exhibitions</li></a></div>
+                    <div class="smol"><a class="nav-link" href="#events-anchor"><li>Events</li></a></div>
+                    <div><a class="nav-link" href="#support-anchor"><li>Support Us</li></a></div>
+                </ul>
+            </div>
+
+            <div class="block-title">
+                <h1 class="block-title-head">Visit Us</h1>
+            </div>
+
+        </div>
+
+        <!-- VISIT US BLOCK -->
+        <div id="block-two" class="body-text content">
+            
+            <div id="visit-container" data-100-bottom-top="transform: translateY(150px); opacity: 0" data-center-top="transform: translateY(0px); opacity: 1">
+                
+                <div class="visit-block">
+                    <p id="visit-main" class="left-align-p">                       
+                        FREE ADMISSION<br/>
+                        OPEN TO ALL<br/>
+                    </p>
+                    <img id="open" src="assets/images/icons/open.png">
+                    <p id="visit-first" class="left-align-p">   
+                        Monday  to Saturday<br/> 
+                        10am - 5pm<br/> 
+                    </p>
+                    <img id="wheelchair" src="assets/images/icons/wheelchair.png">
+                    <p id="visit-second" class="left-align-p">
+                        Wheelchair<br/> accessable
+                    </p>
+                </div>
+                <div class="visit-block" >
+                    <p id="visit-main" class="left-align-p" >                       
+                        FACILITIES<br/>
+                    </p>
+                    <img id="cafe" src="assets/images/icons/cafe.png"> 
+                    <p id="visit-first" class="left-align-p">                           
+                        
+                        The Library Café
+                        is accessed to 
+                        the right of the 
+                        building's main 
+                        entrance 
+                    </p>
+                    <img id="toilet" src="assets/images/icons/toilet.png">
+                    <p id="visit-second" class="left-align-p">
+                        
+                        Toilets are located 
+                        in the Library café
+                    </p>
+                </div>
+                <div class="visit-block" >
+                    <p id="visit-main" class="left-align-p" >                       
+                        HOW TO FIND US<br/>
+                    </p>
+                    <img id="floor" src="assets/images/icons/floor.png">
+                    <p id="visit-first" class="left-align-p">
+                        UofE Main Library<br/>
+                        Ground Floor<br/>
+                    </p>
+                    <img id="location" src="assets/images/icons/location.png">
+                    <p id="visit-second" class="left-align-p">                             
+                        George Square<br/> 
+                        EH8 9LJ 
+                    </p>
+                </div>
+                <div class="visit-block" >
+                    <p id="visit-main" class="left-align-p" >                       
+                        CONTACT US<br/>
+                    </p>
+                    <img id="email" src="assets/images/icons/email.png">
+                    <p id="visit-first-email" class="left-align-p">
+                        <a id="email-link" href="Is.crc@ed.ac.uk">Is.crc@ed.ac.uk</a><br/>
+                    </p>
+                    <img id="phone" src="assets/images/icons/phone.png">
+                    <p id="visit-second-phone" class="left-align-p">                             
+                        0131... 
+                    </p>
+
+                </div>
+
+                <div id="google-map"></div>
+            </div>
+               
+        </div>
+
+        <div id="page-gap" class="gap">
+
+            <div id="exhibitions-anchor"></div>
+        
+            <div class="nav-container" data-100-bottom-top="transform: translateY(-500px); opacity: -10" data-center-top="transform: translateX(0px); opacity: 1">
+                <ul>
+                    <div class="smol"><a class="nav-link" href="#visit-anchor"><li>Visit Us</li></a></div>
+                    <div><a class="nav-link" href="#exhibitions-anchor"><li>Exhibitions</li></a></div>
+                    <div class="smol"><a class="nav-link" href="#events-anchor"><li>Events</li></a></div>
+                    <div><a class="nav-link" href="#support-anchor"><li>Support Us</li></a></div>
+                </ul>
+            </div>
+
+            <div class="block-title">
+                <h1  class="block-title-head">Exhibitions</h1>
+            </div>
+    
+        </div>
+
+        <!-- EXHIBITION BLOCK -->
+        <div id="block-three" class="body-text content">
+
+            <h2 id="current-exhibitions" class="left-align-h" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">Current Exhibition</h2>
+
+            <div class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">         
+                    <a href="https://exhibitions.ed.ac.uk/conectando">
+                        <div class="image-box" >
+                            <img src="assets/images/logos/current_exhibition_logo.png" >
+                        </div>
+                    </a>
+                </div>
+
+                <div id="info-container" class="exhibit-info" data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                    <h2 class="right-align-h"><a href="https://exhibitions.ed.ac.uk/conectando">Conectando: Scottish Encounters with Spanish & Portugese</a></h2>
+
+                    <p class="right-align-p" >                       
+                            From artists seeking inspiration, to volunteers who fought in the Spanish Civil War, and students learning a new language, discover the many Scottish connections with the Spanish and Portuguese speaking worlds
+                    </p>
+
+                    <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY
+                    </p>
+                    <p class="right-align-p">
+                            5 APRIL 2018 - 29 JUNE 2019
+                    </p>
+                    <p class="right-align-p">
+                            Ground Floor - Monday to Saturday
+                    </p>
+
+                    <a id="info-gap" href="https://exhibitions.ed.ac.uk/conectando">
+                        <button class="exhibit-button">
+                            <p>View Exhibition</p>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+                
+            <h2 id="coming-exhibitions" class="left-align-h" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">Coming Soon</h2>
+                
+
+            <div class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">    
+                    <a>
+                        <div class="image-box" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                            <img src="assets/images/exhibitboxes/box_1.png" alt="Forthcoming Exhibit">
+                        </div>
+                    </a>
+                    
+                </div>
+                <div id="coming-exhibit-info">
+                    <div data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <h2 class="right-align-h">
+                            <a>Body Language</a>
+                        </h2>
+            
+                        <p class="right-align-p" >                       
+                            Delve into the archives of Dunfermline College of Physical Education, Scottish Gymnastics, and the influential dance pioneer Margaret Morris (1891-1980), and discover Scotland’s significant contributions to movement and dance
+                        </p>   
+                        <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY 
+                        </p>
+                        <p class="right-align-p">
+                            26 JULY – 26 OCTOBER 2019
+                        </p>
+                        <p class="right-align-p">
+                            Ground Floor - Monday to Saturday (Plus Sundays throughout August)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <a>
+                            <div class="image-box" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                                <img src="assets/images/exhibitboxes/box_2.png" alt="Forthcoming Exhibit">
+                            </div>
+                        </a>
+                </div>
+                <div id="coming-exhibit-info" >
+                    <div data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <h2 class="right-align-h">
+                            <a>Needlework Development Scheme</a>
+                        </h2>
+            
+                        <p class="right-align-p" >                       
+                                From artists seeking inspiration, to volunteers who fought in the Spanish Civil War, and students learning a new language, discover the many Scottish connections with the Spanish and Portuguese speaking worlds
+                        </p>    
+                        <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY 
+                        </p>
+                        <p class="right-align-p" >
+                            5 APRIL 2018 - 29 JUNE 2019
+                        </p>
+                        <p class="right-align-p" >
+                            Ground Floor - Monday to Saturday
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <a>
+                            <div class="image-box" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                                <img src="assets/images/exhibitboxes/box_3.png" alt="Forthcoming Exhibit">
+                            </div>
+                        </a>
+                    </div>
+                <div id="coming-exhibit-info" >
+                    <div data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <h2 class="right-align-h">
+                            <a>Lu Xuin: A Legacy In Print</a>
+                        </h2>
+            
+                        <p class="right-align-p" >                       
+                                From artists seeking inspiration, to volunteers who fought in the Spanish Civil War, and students learning a new language, discover the many Scottish connections with the Spanish and Portuguese speaking worlds
+                        </p>
+                        <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY 
+                        </p>
+                        <p class="right-align-p" >
+                            5 APRIL 2018 - 29 JUNE 2019
+                        </p>
+                        <p class="right-align-p" >
+                            Ground Floor - Monday to Saturday
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="coming-exhibitions" class="left-align-h" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">Past Exhibitions</h2>
+
+            <div id="past-container">
+                    
+                <div id="exhibit-logo">
+                    
+                    
+                    <div data-100-bottom-top="transform: translateY(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                        <div id="smol-image-block" >
+                            <a>
+                                <div class="image-box-smol" >
+                                    <img src="assets/images/exhibitboxes/past_1.jpg" alt="Forthcoming Exhibit">
+                                </div>
+                            </a>
+                            <a>
+                                <div class="image-box-smol" >
+                                    <img src="assets/images/exhibitboxes/past_2.jpg" alt="Forthcoming Exhibit">
+                                </div>
+                            </a>
+                            <a>
+                                <div class="image-box-smol" >
+                                    <img src="assets/images/exhibitboxes/past_3.jpg" alt="Forthcoming Exhibit">
+                                </div>
+                            </a>
+                            <a>
+                                <div class="image-box-smol" >
+                                    <img src="assets/images/exhibitboxes/past_4.jpg" alt="Forthcoming Exhibit">
+                                </div>
+                            </a>
+                            <a>
+                                <div class="image-box-smol" >
+                                    <img src="assets/images/exhibitboxes/past_5.jpg" alt="Forthcoming Exhibit">
+                                </div>
+                            </a>
+                        </div>
+                        <div id="smol-image-block" >
+                            <div class="text-box-smol">
+                                <h3 class="past-exhibit-h"><a>Past Exhibition 1</a></h3>
+                                <p class="past-exhibit-p">Apr 2018 - May 2019</p>
+                                <a href="https://exhibitions.ed.ac.uk/past"><button id="past-button" class="exhibit-button">
+                                    <p>View Exhibition</p>
+                                </button></a>
+                            </div>
+                            <div class="text-box-smol">
+                                <h3 class="past-exhibit-h"><a>Past Exhibition 2</a></h3>
+                                <p class="past-exhibit-p">Nov 2017 - Mar 2018</p>
+                                <a href="https://exhibitions.ed.ac.uk/past"><button id="past-button" class="exhibit-button">
+                                    <p>View Exhibition</p>
+                                </button></a>
+                            </div>
+                            <div class="text-box-smol">
+                                <h3 class="past-exhibit-h"><a>Past Exhibition 3</a></h3>
+                                <p class="past-exhibit-p">Jan 2017 - Aug 2017</p>
+                                <a href="https://exhibitions.ed.ac.uk/past"><button id="past-button" class="exhibit-button">
+                                    <p>View Exhibition</p>
+                                </button></a>
+                            </div>
+                            <div class="text-box-smol">
+                                <h3 class="past-exhibit-h"><a>Past Exhibition 4</a></h3>
+                                <p class="past-exhibit-p">Apr 2016 - Dec 2016</p>
+                                <a href="https://exhibitions.ed.ac.uk/past"><button id="past-button" class="exhibit-button">
+                                    <p>View Exhibition</p>
+                                </button></a>
+                            </div>
+                            <div class="text-box-smol">
+                                <h3 class="past-exhibit-h"><a>Past Exhibition 5</a></h3>
+                                <p class="past-exhibit-p">Oct 2015 - Feb 2016</p> 
+                                <a href="https://exhibitions.ed.ac.uk/past"><button id="past-button" class="exhibit-button">
+                                    <p>View Exhibition</p>
+                                </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+            </div>
+
+            <div id="past-icon" class="past-icon" data-100-bottom-top="transform: translateY(50px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                <a href="https://exhibitions.ed.ac.uk/past">
+                    <img id="past-list" src="assets/images/icons/list.png">
+                    <p class="left-align-p">View the full past exhibitions list</p>
+                </a>
+            </div>
+    
+        </div>
+
+        <div id="page-gap" class="gap">
+
+            <div id="events-anchor"></div>
+        
+            <div class="nav-container" data-100-bottom-top="transform: translateY(-500px); opacity: -10" data-center-top="transform: translateX(0px); opacity: 1">
+                <ul>
+                    <div class="smol"><a class="nav-link" href="#visit-anchor"><li>Visit Us</li></a></div>
+                    <div><a class="nav-link" href="#exhibitions-anchor"><li>Exhibitions</li></a></div>
+                    <div class="smol"><a class="nav-link" href="#events-anchor"><li>Events</li></a></div>
+                    <div><a class="nav-link" href="#support-anchor"><li>Support Us</li></a></div>
+                </ul>
+            </div>
+
+            <div class="block-title">
+                <h1 class="block-title-head">Events</h1>
+            </div>
+    
+        </div>
+
+        <!-- EVENTS BLOCK -->
+        <div id="block-four" class="body-text content">
+
+            <h2 id="current-events" class="left-align-h" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">Up-Coming Events</h2>
+
+            <div class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">         
+                    <a href="https://exhibitions.ed.ac.uk">
+                        <div class="image-box" >
+                            <img src="assets/images/eventboxes/box_1.png" >
+                        </div>
+                    </a>
+                </div>
+
+                <div id="info-container" class="exhibit-info" data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                    <h2 id="first-event" class="right-align-h">
+                        <a href="https://exhibitions.ed.ac.uk/conectando">Event Example One</a>
+                    </h2>
+
+                    <p class="right-align-p" >                       
+                        A strong and clear event description excites punters: tell them what will happen at the event, who will be speaking, and what they might get out of attending. Your event may be brilliant, but no one else will know without you telling and convincing them.
+                    </p>
+
+                    <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY
+                    </p>
+                    <p class="right-align-p">
+                            5 APRIL 2018 - 29 JUNE 2019
+                    </p>
+                    <p class="right-align-p">
+                            Ground Floor - Monday to Saturday
+                    </p>
+
+                    <a id="info-gap" href="https://exhibitions.ed.ac.uk/conectando">
+                        <button class="exhibit-button">
+                            <p>View Event</p>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div id="central-event" class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">         
+                    <a href="https://exhibitions.ed.ac.uk">
+                        <div class="image-box" >
+                            <img src="assets/images/eventboxes/box_2.png" >
+                        </div>
+                    </a>
+                </div>
+
+                <div id="info-container" class="exhibit-info" data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                    <h2 id="first-event" class="right-align-h">
+                        <a href="https://exhibitions.ed.ac.uk/conectando">Event Example Two</a>
+                    </h2>
+
+                    <p class="right-align-p" >                       
+                        A strong and clear event description excites punters: tell them what will happen at the event, who will be speaking, and what they might get out of attending. Your event may be brilliant, but no one else will know without you telling and convincing them.
+                    </p>
+
+                    <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY
+                    </p>
+                    <p class="right-align-p">
+                            5 APRIL 2018 - 29 JUNE 2019
+                    </p>
+                    <p class="right-align-p">
+                            Ground Floor - Monday to Saturday
+                    </p>
+
+                    <a id="info-gap" href="https://exhibitions.ed.ac.uk/conectando">
+                        <button class="exhibit-button">
+                            <p>View Event</p>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div id="last-event" class="exhibition-container">
+                <div id="exhibit-logo" data-100-bottom-top="transform: translateX(-75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">         
+                    <a href="https://exhibitions.ed.ac.uk">
+                        <div class="image-box" >
+                            <img src="assets/images/eventboxes/box_3.png" >
+                        </div>
+                    </a>
+                </div>
+
+                <div id="info-container" class="exhibit-info" data-100-bottom-top="transform: translateX(75px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                    <h2 id="first-event" class="right-align-h">
+                        <a href="https://exhibitions.ed.ac.uk/conectando">Event Example Three</a>
+                    </h2>
+
+                    <p class="right-align-p" >                       
+                        A strong and clear event description excites punters: tell them what will happen at the event, who will be speaking, and what they might get out of attending. Your event may be brilliant, but no one else will know without you telling and convincing them.
+                    </p>
+
+                    <p id="info-gap" class="right-align-p" >                       
+                            MAIN LIBRARY EXHIBITION GALLERY
+                    </p>
+                    <p class="right-align-p">
+                            5 APRIL 2018 - 29 JUNE 2019
+                    </p>
+                    <p class="right-align-p">
+                            Ground Floor - Monday to Saturday
+                    </p>
+
+                    <a id="info-gap" href="https://exhibitions.ed.ac.uk/conectando">
+                        <button class="exhibit-button">
+                            <p>View Event</p>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div id="past-icon" class="past-icon" data-100-bottom-top="transform: translateY(50px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+                <a href="https://exhibitions.ed.ac.uk/past">
+                    <img id="past-list" src="assets/images/icons/list.png">
+                    <p class="left-align-p">View the full events list</p>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div id="page-gap" class="gap">
+
+            <div  id="support-anchor"></div>
+        
+            <div class="nav-container" data-100-bottom-top="transform: translateY(-500px); opacity: -10" data-center-top="transform: translateX(0px); opacity: 1">
+                <ul>
+                    <div class="smol"><a class="nav-link" href="#visit-anchor"><li>Visit Us</li></a></div>
+                    <div><a class="nav-link" href="#exhibitions-anchor"><li>Exhibitions</li></a></div>
+                    <div class="smol"><a class="nav-link" href="#events-anchor"><li>Events</li></a></div>
+                    <div><a class="nav-link" href="#support-anchor"><li>Support Us</li></a></div>
+                </ul>
+            </div>
+
+            <div class="block-title">
+                <h1 class="block-title-head">Support Us</h1>
+            </div>
+    
+        </div>
+
+
+        <!-- SUPPORT US BLOCK -->
+        <div id="block-one" class="body-text content">
+
+            <div id="discover-logo">
+                <img src="assets/images/logos/discover_ed_logo.png">
+            </div>
+            <div id="welcome-container">
+                <h2 id="support-h" class="right-align-h" >Support the University of Edinburgh Library Exhibitions</h2>
+
+                <h3 id="support-h" class="right-align-h">Follow us:</h3>
+
+                <div id="social-image-block" >
+                    <div class="social-image-box">
+                        <a href="https://twitter.com/EdUniLibraries">
+                            <img src="http://discoveredfiles.is.ed.ac.uk/images/blogicon.png" alt="blogicon.png">
+                        </a>
+                    </div>
+                    <div class="social-image-box">
+                        <a href="https://twitter.com/edunimainlib?lang=en">
+                            <img src="http://discoveredfiles.is.ed.ac.uk/images/twittericon.png" alt="twittericon.png">
+                        </a>
+                    </div>
+                    <div class="social-image-box">
+                        <a href="https://www.facebook.com/EdUniLibraries">
+                            <img src="http://discoveredfiles.is.ed.ac.uk/images/facebookicon.png" alt="facebookicon.png">
+                        </a>
+                    </div>
+                </div>
+
+                <p id="support-p" class="right-align-p">
+                    For more information on how you can support the University of Edinburgh Library Exhibitions or to get involved email us at <a href="Is.crc@ed.ac.uk">Is.crc@ed.ac.uk</a>
+                </p>               
+        
+            </div>
+
+        </div>
+
+        
+
+        <footer>
+
+            <div class="footer-container">
+                <ul id="footer-list-l">
+                    <div class="footer-link"><li><a href="https://www.ed.ac.uk/about/website/website-terms-conditions">Terms &amp; conditions</a></li></div>
+                    <div class="footer-link"><li><a href="https://www.ed.ac.uk/about/website/privacy">Privacy &amp; cookies</a></li></div>
+                    <div class="footer-link"><li><a href="https://www.ed.ac.uk/about/website/accessibility">Website accessibility</a></li></div>
+                </ul>
+                <ul id="footer-list-r">
+                    <div class="footer-link"><li><a href="https://www.myed.ed.ac.uk/"><span class="glyphicon glyphicon-log-in"></span>MyEd Login</a></li></div>
+                </ul>
+            </div>
+
+        </footer>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- TEMPLATES FOR DIFFERENT BLOCK STYLES * Corrispond with wrapper templates -->
+    <!--<div class="features-list">
+
+        <h2>Features</h2>
+
+        <div data-100-bottom-top="transform: translateX(-200px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+            <i class="material-icons">cloud_done</i>
+            <h4>10 GB of free <b>cloud storage</b></h4>
+        </div>
+
+        <div data-100-bottom-top="transform: translateY(200px); opacity: 0" data-center-top="transform: translateY(0px); opacity: 1">
+            <i class="material-icons">public</i>
+            <h4>Servers in over <b>45 locations</b></h4>
+        </div>
+
+        <div data-100-bottom-top="transform: translateX(200px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+            <i class="material-icons">security</i>
+            <h4>Guaranteed <b>data protection</b></h4>
+        </div>
+
+    </div>
+
+    <div class="gap" style="background:url(assets/images/library_entrance.jpg);"></div>-->
+
+
+<!-- SKROLLR SCRIPTS FOR PARALLAX SCROLLING FUNCTIONALITY -->
+<script src="assets/jscript/skrollr.min.js"></script>
+
+<script type="text/javascript">
+    skrollr.init();
+</script>
+
+<script type="text/javascript">
+    function scrollToAnchor(anchor){
+        var element = document.getElementById(anchor);
+        element.scrollIntoView({behavior:"smooth"});
+    }
+</script>
+
+<!-- GOOGLE MAPS SCRIPT -->
+<script type="text/javascript">
+    function initMap() {
+        var options = {
+            zoom: 15,
+            center:{lat:55.9427,lng:-3.1890}
+        }
+
+        var map = new google.maps.Map(document.getElementById('google-map'), options);
+
+        var marker = new google.maps.Marker({
+            position:{lat:55.9427,lng:-3.1890},
+            map:map
+        });
+    }
+</script>
+
+<!-- SCRIPT TO CHECK DAY OF THE WEEK AND DISPLAY CORRECT OPENING TIMES -->
+<script type="text/javascript">
+    var dt = new Date("June 12, 2019 00:00:00");
+    if (dt.getDay()!==0){
+        document.getElementById("opening-times").innerHTML = "OPEN TODAY:   9am - 5pm";
+    }
+    else {
+        document.getElementById("opening-times").innerHTML = "CLOSED TODAY";
+    }
+    
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvMkF0gI1qEfshx7abFUgqRImox1MbavM&callback=initMap" async defer></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
+</body>
+</html>

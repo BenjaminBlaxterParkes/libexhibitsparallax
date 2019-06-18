@@ -1,0 +1,87 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax-wrapper {
+    width: 100vw;
+    height: 50vh;   
+    box-sizing: border-box; 
+    transform-style: preserve-3d;
+}
+
+.parallax-head::before {
+    content: "";
+    width: 100vw; 
+    height: 100vh; 
+    top: 0;
+    left: 0;
+    background-image: url("/libraryexhibit.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+}
+.parallax-block-1::before {
+    content: "";
+    width: 100vw; 
+    height: 100vh; 
+    top: 200px;
+    left: 0;
+    background-image: url("/block1.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+}
+
+
+.block-wrapper {
+    width: 100vw;
+    height: 20vh; 
+    padding-top: 20vh; 
+    background: #b6015c; 
+    z-index: 1;
+    position: relative;
+    /*box-shadow: 20px 0 50px #FFF;*/
+}
+.block-head-wrapper {
+    top: 12px;
+    z-index: 1;
+    position: relative; 
+}
+.block-title {
+    margin: 0;
+    padding: 0 50px;
+    color: #b6015c;
+    text-transform: uppercase;
+}
+
+.content {
+    float: right;
+    margin: -35px -20vh;
+    width: 80%;
+    color: #FFF;
+    
+}
+
+.block-image img {
+    width: 300px;
+    float: left;
+    margin: 0 25px;
+    position: absolute;
+    bottom: 120px;
+}

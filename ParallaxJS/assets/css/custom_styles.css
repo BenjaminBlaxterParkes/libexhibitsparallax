@@ -1,0 +1,380 @@
+/**
+ Custom styles for the University of Edinburgh Library Exhibitions 
+ Author @bparkes, Digital Library Development & Systems, 2019
+ © University of Ediburgh, Library & University Collections, 2019
+**/
+
+/* Custom Styles */
+
+/* Global Styles */
+.right-align-h {
+    text-align: right;
+    float: none;
+    font-weight: normal;
+}
+.right-align-p {
+    text-align: right;
+    float: none;
+}
+.left-align-h {
+    text-align: left;
+    float: none;
+    margin-left: 8vh;
+}
+#info-gap {
+    margin-top: 25px;
+}
+
+/* Header & Navigation */
+.logo-container {
+    margin-left: 5vh;
+    width: 25%;
+    float: left;
+}
+.logo-container img {
+    width: 75%;
+    padding: 25px 10px 10px;
+    background: rgb(182,1,92,0.7);    
+}
+.logo-container :hover {
+    background: rgb(182,1,92); 
+}
+.nav-container {
+    float: right;
+}
+.nav-container ul {
+    display: -webkit-inline-box;
+    float: right;
+    list-style: none; 
+}
+.nav-container a {
+    display: -webkit-inline-box;
+    padding: 15px 35px 10px;
+    color: #FFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.nav-container div {
+    background: rgb(182,1,92,0.7);
+}
+.smol {
+    padding: 0 2.5vh;
+}
+.nav-container div:hover {
+    background: rgb(182,1,92); 
+}
+.nav-link:hover {
+    text-decoration: none;
+}
+
+/* Parallax Background Image Gaps */
+#page-gap {
+    position: relative;
+}
+
+/* Block Styles */
+.block-title { 
+    position: absolute;
+    bottom: 0;
+}
+.block-title-head {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 80px;
+    color: #b6015c;
+    padding: 0 0 0 8vh;
+    margin-bottom: -29px;
+}
+#block-one, #block-two {
+    display: flex;
+}
+#discover-logo, #exhibit-logo {
+    margin-left: 8vh;
+}
+
+/* Welcome Block */
+#welcome-container {
+    margin-top: 5.6vh;
+    margin-left: 20vh;
+    margin-right: 8vh;
+}
+#opening-times {
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+/* Visit Us Block */
+#visit-container {
+    margin-left: 7vh;
+    display: inline-flex;
+}
+.visit-block {
+    margin-right: 10vh;
+    width: 15%;
+}
+.visit-block img {
+    float: left;
+    margin: 18px 5px 0px 0px;
+}
+#visit-first {
+    margin-top: 18px;
+}
+#visit-first img {
+    float: left;
+    margin-right: 5px;
+}
+#visit-second {
+    margin-top: 18px;
+}
+#visit-second img {
+    float: left;
+    margin-right: 5px;
+}
+#cafe {
+    margin: 40px 8px 14px 0px;   
+}
+#toilet {
+    margin-right: 12px;
+}
+#floor {
+    margin-right: 15px;
+}
+#visit-first-email {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+#email {
+    margin-right: 15px;
+}
+#phone {
+    float: left;
+    margin: 0px 15px 0 0;
+}
+#visit-second-phone {
+    margin-top: 50px;
+}
+#google-map {
+    height: 250px;
+    width: 400px;
+    margin-right: 5vh;
+}
+#email-link {
+    margin: 0;
+}
+#email-link:hover{
+    text-decoration: underline;
+}
+
+/* Exhibitions Block */
+#block-three a {
+    margin: 0px;
+}
+#block-three a:hover {
+    text-decoration: underline;
+}
+#info-container {
+    margin-top: 2vh;
+    margin-left: 20vh;
+    margin-right: 8vh;
+}
+#coming-exhibit-info {
+    margin-top: 5vh;
+    margin-left: 20vh;
+    margin-right: 8vh;
+}
+.exhibition-container {
+    display: flex;
+    margin-bottom: 5vh;
+}
+.exhibition-container a {
+    font-size: 42px;
+    font-weight: normal;
+    color: #FFF;
+}
+#current-exhibitions, #coming-exhibitions, #past-exhibitions, #current-events {
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+#coming-exhibitions, #past-exhibitions{
+    margin-top: 8vh;
+}
+.coming-exhibit-info {
+    margin-top: 7vh;
+}
+.exhibit-button {
+    margin: 2vh 0vh 0vh 0vh;
+    float: right;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    background: #b6015c;
+}
+.exhibit-button p {
+    font-size: 20px;
+    margin: 5px 8px;
+}
+.exhibit-button:hover {
+    background-color: #d21e78;
+}
+.exhibit-button:focus {
+    outline:0;
+}
+#past-button {
+    float: left;
+    margin: 2vh 0vh 0vh 0vh;
+}
+
+/* Coming Soon Section */
+.image-box {
+    width: 400px;
+    height: 400px;
+    background: #FFF;
+    margin-top: 30px;
+}
+.image-box img {
+    width: 390px;
+    height: 390px;
+    overflow: hidden; 
+    object-fit: cover;
+    margin: 5px;
+}
+/* Past Exhibition Section */
+#smol-image-block {
+    display: inline-flex;
+}
+.image-box-smol {
+    width: 250px;
+    height: 250px;
+    background: #FFF;
+    margin-right: 15.6vh;
+}
+.image-box-smol img {
+    width: 240px;
+    height: 240px;
+    overflow: hidden; 
+    object-fit: cover;
+    margin: 5px;
+}
+.text-box-smol {
+    width: 250px;
+    height: 250px;
+    margin-right: 15.6vh;
+}
+.past-exhibit-h {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 30px;
+}
+.past-exhibit-p {
+    margin-top: 10px;
+}
+.past-icon {
+    margin-left: 8vh;
+    display: flex;
+    text-decoration: none;
+}
+.past-icon p, a {
+    margin: 14px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+#past-list {
+    float: left;
+    margin-right: 10px;
+}
+.past-icon p:hover, a:hover {
+    text-decoration: underline;
+}
+.past-icon img:hover, div:hover, p:hover, a:hover {
+    text-decoration: none;
+}
+.past-icon:visited p, a {
+    text-decoration: none;
+}
+
+/* Events Block */
+#current-events {
+    margin-bottom: 0;
+}
+#first-event {
+    margin-top: 6.5vh;
+}
+#coming-events {
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+#central-event {
+    margin-top: -125px;
+}
+#coming-soon-container a:hover {
+    text-decoration: underline;
+}
+#last-event {
+    margin-bottom: 4vh;
+    margin-top: -125px;
+}
+
+
+
+/* Support Us Block */
+#support-container {
+    margin-top: 4vh;
+}
+#social-image-block {
+    display: inline-flex;
+    float: right;
+}
+.social-image-box {
+    margin-left: 2vh;
+}
+.social-image-box a {
+    margin: 0px;
+}
+#support-h {
+    margin-bottom: 20px;
+}
+#support-p {
+    margin-top: 120px
+}
+#support-p a {
+    color: #FFF;
+    text-decoration: none;
+    margin: 0px;
+}
+#support-p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer{
+    background: #cc528d;
+}
+.footer-container ul {
+    display: -webkit-inline-box;
+    list-style: none; 
+}
+.footer-container a {
+    display: -webkit-inline-box;
+    padding: 25px 25px;
+    color: #FFF; 
+    text-decoration: none;
+    font-weight: normal;
+}
+.footer-link {
+    padding: 0px 25px 0px 25px;
+}
+.footer-link:hover {
+    background: #d21e78;
+    text-decoration: none;
+}
+#footer-list-l{
+    float: left;
+}
+#footer-list-r{
+    float: right;
+}
+#myed {
+   margin: 12px 0px 0px 5px;
+}
+
+
